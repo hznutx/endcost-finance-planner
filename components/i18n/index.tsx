@@ -21,13 +21,10 @@ export const languages = [
 export default function LanguageSwitcher() {
   const pathname = usePathname();
   const router = useRouter();
-
-  const segments = String(pathname).split('/');
-  const currentLocale = segments[1] || 'th';
+  const currentLocale = String(pathname).split('/')[1] ?? 'th';
 
   const handleChange = (locale: string) => {
-    segments[1] = locale;
-    router.push(segments.join('/'));
+    router.replace(`/${locale}${String(pathname).slice(3)}`);
   };
 
   const currentLang = languages.find((lang) => lang.code === currentLocale) || languages[1];
@@ -35,13 +32,24 @@ export default function LanguageSwitcher() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button variant='bordered' endContent={<IoIosArrowDown />}>
-          <span className='mr-2'>{currentLang.flag}</span>
-          {currentLang.label}
+        <Button
+          className='min-w-10 px-3 text-xl'
+          variant='bordered'
+          endContent={
+            <IoIosArrowDown
+              size={16}
+              className='focus:outline-none focus:ring-0'
+            />
+          }
+        >
+          <span>{currentLang.flag}</span>
         </Button>
       </DropdownTrigger>
 
-      <DropdownMenu aria-label='Language Switcher' onAction={(key) => handleChange(String(key))}>
+      <DropdownMenu
+        aria-label='Language Switcher'
+        onAction={(key) => handleChange(String(key))}
+      >
         {languages.map((lang) => (
           <DropdownItem key={lang.code}>
             <span className='mr-2'>{lang.flag}</span>

@@ -15,4 +15,5 @@ export const prompt = Prompt({
   style: ['normal', 'italic'],
   subsets: ['thai'],
   display: 'swap',
+  variable: '--font-prompt',
 });

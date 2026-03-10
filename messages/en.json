@@ -2,6 +2,18 @@
   "menu": {
     "calculator": "Calculator"
   },
+  "features": {
+    "cost": {
+      "currency": "Currency",
+      "item": "Item",
+      "price": "Price",
+      "daily_cost": "Cost per day",
+      "or": "or",
+      "uses_day": "Uses Day",
+      "debt": "Debt",
+      "price_after": "'Price after debt'"
+    }
+  },
   "hero": {
     "title": "Cost Calculator"
   }
