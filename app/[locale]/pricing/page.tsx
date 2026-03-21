@@ -1,57 +1,45 @@
 'use client';
-import PhoneCard, {IPhoneData} from '@/components/card/PhoneCard';
+import PhoneCard, { IPhoneData } from '@/components/card/PhoneCard';
 import SearchPhoneNumber from '@/components/search-number';
 
-import {usePhoneNumbers} from '@/services/find';
+import { usePhoneNumbers } from '@/services/find';
 
-import {Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure} from "@heroui/react";
-import {useState} from 'react';
+import { Modal, ModalContent, ModalBody, ModalFooter, Button, useDisclosure } from '@heroui/react';
+import { useState } from 'react';
 
-const positions = Array.from({length: 10}, (_, i) => i + 1);
+const positions = Array.from({ length: 10 }, (_, i) => i + 1);
 const defaultState = {
-  positionCriteria: positions.reduce((acc, pos) => ({...acc, [pos]: pos === 1 ? '0' : ''}), {} as Record<number, string>),
+  positionCriteria: positions.reduce((acc, pos) => ({ ...acc, [pos]: pos === 1 ? '0' : '' }), {} as Record<number, string>),
   includePatterns: [] as string[],
   excludeNumbers: [] as string[],
   targetSum: undefined as number | undefined,
 };
 
-const HomePage: React.FC = () => {
-  const {isOpen, onOpen, onOpenChange} = useDisclosure();
+const PricingPage: React.FC = () => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [filters, setFilters] = useState(defaultState);
 
-  const {phoneNumbers, isLoading, error} = usePhoneNumbers(filters);
+  const { phoneNumbers, isLoading, error } = usePhoneNumbers(filters);
 
   const updateFilter = (key: keyof typeof filters, value: any) => {
-    setFilters((prev) => ({...prev, [key]: value}));
+    setFilters((prev) => ({ ...prev, [key]: value }));
   };
 
   return (
     <>
       <div className='flex flex-col w-full justify-center items-center'>
-        <Button
-          variant='light'
-          onPress={onOpen}>
+        <Button variant='light' onPress={onOpen}>
           เลือกเบอร์มงคลที่ต้องการ
         </Button>
-        <Modal
-          backdrop='blur'
-          size='md'
-          isOpen={isOpen}
-          onOpenChange={onOpenChange}>
+        <Modal backdrop='blur' size='md' isOpen={isOpen} onOpenChange={onOpenChange}>
           <ModalContent>
             {(onClose) => (
               <>
                 <ModalBody>
-                  <SearchPhoneNumber
-                    updateFilter={updateFilter}
-                    filters={filters}
-                  />
+                  <SearchPhoneNumber updateFilter={updateFilter} filters={filters} />
                 </ModalBody>
                 <ModalFooter>
-                  <Button
-                    fullWidth
-                    variant='shadow'
-                    onPress={onClose}>
+                  <Button fullWidth variant='shadow' onPress={onClose}>
                     ดูผลลัพธ์
                   </Button>
                   <Button
@@ -75,10 +63,7 @@ const HomePage: React.FC = () => {
           {error && <p className='text-red-500 mt-2'>เกิดข้อผิดพลาด: {error.message}</p>}
           {!isLoading && phoneNumbers.length === 0 && <p>ไม่มีผลลัพธ์</p>}
           {phoneNumbers.map((data: IPhoneData, index: number) => (
-            <PhoneCard
-              key={index}
-              data={data}
-            />
+            <PhoneCard key={index} data={data} />
           ))}
         </div>{' '}
       </div>
@@ -86,4 +71,4 @@ const HomePage: React.FC = () => {
   );
 };
 
-export default HomePage;
+export default PricingPage;

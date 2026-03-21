@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hide Safari scrollbars */
+:root {
+  --font-prompt: 'Prompt', sans-serif;
+}
+
 .hidden-safari-scroll {
   overflow: hidden;
 }
@@ -16,7 +19,6 @@
   display: none;
 }
 
-/* Base styles */
 @layer base {
   html,
   body {
@@ -38,7 +40,6 @@
   }
 }
 
-/* Hover link utility */
 .hover-link {
   transition: color 0.3s;
 }
@@ -47,13 +48,11 @@
   color: #3498db;
 }
 
-/* Body font settings */
 body {
-  font-family: 'Kanit', sans-serif;
+  font-family: var(--font-prompt) !important;
   font-weight: 400;
 }
 
-/* Pyramid loader */
 .pyramid-loader {
   position: relative;
   width: 200px;

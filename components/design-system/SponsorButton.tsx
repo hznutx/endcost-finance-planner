@@ -1,12 +1,12 @@
 'use client';
-import {siteConfig} from '@/config/site';
-import {Button} from '@heroui/button';
-import {HeartFilledIcon} from '../icons';
-import {Modal, ModalBody, ModalContent, useDisclosure} from '@heroui/modal';
-import {Image} from '@heroui/react';
+import { siteConfig } from '@/config/site';
+import { Button } from '@heroui/button';
+import { HeartFilledIcon } from '../icons';
+import { Modal, ModalBody, ModalContent, useDisclosure } from '@heroui/modal';
+import { Image } from '@heroui/react';
 
 const SponsorButton: React.FC = () => {
-  const {isOpen, onOpenChange, onOpen} = useDisclosure();
+  const { isOpen, onOpenChange, onOpen } = useDisclosure();
 
   return (
     <>
@@ -14,20 +14,23 @@ const SponsorButton: React.FC = () => {
         onPress={onOpen}
         className='text-sm font-normal text-default-600 bg-default-100'
         startContent={<HeartFilledIcon className='text-danger focus:selection:drop-shadow-none' />}
-        variant='flat'>
+        variant='flat'
+      >
         Sponsor
       </Button>
       <Modal
         size='md'
         isOpen={isOpen}
-        onOpenChange={onOpenChange}>
+        onOpenChange={onOpenChange}
+      >
         <>
           <ModalContent className='p-0 m-0 w-fit'>
             {(onClose) => (
               <ModalBody className='p-0 m-0 w-fit'>
                 <div className={'relative transition-all flex w-fit items-center justify-center'}>
-                  <div className={'relative w-80 flex items-center justify-center rounded-2xl'}>
+                  <div className={'relative h-[70vh] aspect-[2/3] flex items-center justify-center rounded-2xl'}>
                     <Image
+                      loading='lazy'
                       src={`${siteConfig.links.sponsor}`}
                       className='object-scale-down'
                     />
@@ -35,8 +38,8 @@ const SponsorButton: React.FC = () => {
                 </div>
               </ModalBody>
             )}
-          </ModalContent>{' '}
-          <div className='absolute w-full flex justify-between z-50 top-0'>
+          </ModalContent>
+          <div className='absolute w-full flex justify-between z-50 -top-20'>
             <iframe
               width={500}
               height={800}

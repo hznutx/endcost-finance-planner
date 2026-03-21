@@ -1,34 +1,39 @@
-export type SiteConfig = typeof siteConfig;
+import { FaPhoneVolume } from 'react-icons/fa6';
+
+export type ISiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: 'Numerologyx',
-  description: 'เบอร์มงคลที่ช่วยให้คุณประสบความสำเร็จ',
+  name: 'EndCost',
+  description: 'เครื่องมือคำนวณต้นทุนรวมและกระจายค่าใช้จ่ายในระยะยาว ช่วยสรุปยอดใช้จ่ายทั้งหมด คำนวณต้นทุนเฉลี่ยต่อวัน และประเมินระยะเวลาหนี้ได้อย่างรวดเร็ว ใช้งานง่าย เหมาะสำหรับวางแผนการเงินและควบคุมงบประมาณให้มีประสิทธิภาพ',
   navItems: [
     {
-      label: 'Home',
+      label: '',
       href: '/',
+      type: 'menu',
     },
-
     {
-      label: 'วิเคราะห์เบอร์ปัจจุบัน',
+      label: 'Numerologyx',
       href: '/check',
+      type: 'dropdown',
     },
   ],
   navMenuItems: [
     {
-      label: 'Profile',
-      href: '/profile',
+      label: 'วิเคราะห์เบอร์ของคุณ',
+      href: '/',
+      key: 'Numerologyx',
+      icon: FaPhoneVolume,
     },
 
     {
-      label: 'Projects',
+      label: 'เบอร์มงคล',
       href: '/projects',
+      key: 'Numerologyx',
+      icon: FaPhoneVolume,
     },
   ],
   links: {
     github: 'https://github.com/hznutx',
-    twitter: 'https://twitter.com/hznutx',
-    discord: 'https://discord.gg/ZVkpqCWX',
     sponsor: 'https://i.ibb.co/8LhJnyht/image0.jpg',
   },
 };
