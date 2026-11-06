@@ -1,0 +1,6 @@
+onlyBuiltDependencies:
+  - '@heroui/shared-utils'
+  - '@parcel/watcher'
+  - '@swc/core'
+  - react-vertical-timeline-component
+  - sharp
