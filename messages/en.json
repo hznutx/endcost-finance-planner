@@ -1,7 +1,5 @@
 {
-  "menu": {
-    "calculator": "Calculator"
-  },
+  "menu": { "percent_of": "% Of", "angel_number": "Phone Number" },
   "features": {
     "cost": {
       "currency": "Currency",

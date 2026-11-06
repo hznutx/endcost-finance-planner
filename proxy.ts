@@ -2,12 +2,10 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 const locales = ['en', 'th'];
-const defaultLocale = 'th';
+const defaultLocale = 'en';
 
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-
-  // Ignore next internal paths and static files
   if (pathname.startsWith('/_next') || pathname.startsWith('/api') || pathname.includes('.')) {
     return;
   }

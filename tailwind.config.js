@@ -21,11 +21,28 @@ module.exports = {
           black: '#000',
           white: '#fff',
         },
-        primary: '#43cea2',
+        primary: '#12c2c9',
         warning: '#F2AEBB',
         secondary: '#DBDFEA',
         error: '#C8B6E2',
         default: '#EEE',
+        db: {
+          blue: '#0b5ed7',
+          'blue-2': '#1a7fe0',
+          teal: '#12c2c9',
+        },
+      },
+      keyframes: {
+        'db-rise': {
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to: { opacity: '1', transform: 'none' },
+        },
+        'spin-y': {
+          to: { transform: 'rotateY(360deg)' },
+        },
+      },
+      animation: {
+        'db-rise': 'db-rise 0.5s ease both',
       },
     },
   },
