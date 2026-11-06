@@ -1,7 +1,5 @@
 # 📖 Purchase Value Planner
 
-### ✨ Make Every Purchase Count. Maximize Every Day of Ownership.
-
 ## Overview
 
 Purchase Value Planner is a financial planning tool designed to help purchasing decisions by understanding the long-term value of the things they buy.
@@ -24,37 +22,32 @@ This project aims to make that perspective easier to understand.
 
 ## 🎯 Core Objectives
 
-1. **🛍️ Understand Purchase Value**  
-   Evaluate whether an item is worth its initial purchase price.
+1. Evaluate whether an item is worth its initial purchase price.
 
-2. **📊 Calculate Cost of Ownership**  
-   Estimate daily, monthly, and annual costs based on the expected usage period.
+2. Estimate daily, monthly, and annual costs based on the expected usage period.
 
-3. **⏳ Determine Optimal Usage Period**  
-   Understand how long an item should be used to maximize its financial value.
+3. Understand how long an item should be used to maximize its financial value.
 
-4. **🧠 Improve Financial Awareness**  
-   Encourage more deliberate spending and better long-term financial decisions.
+4. Encourage more deliberate spending and better long-term financial decisions.
 
-5. **🏦 Plan Future Expenses**  
-   Provide a clearer picture of recurring expenses and major financial commitments.
+5. Plan future expense and major financial commitments.
 
 ## 🚀 Key Features
 
-### 🛒 1. Purchase Cost Analysis
+### 1. Purchase Cost Analysis
 
 - Record purchase prices.
 - Estimate expected usage duration.
 - Calculate average daily, monthly, and annual costs.
 - Compare the value of different purchasing options.
 
-### 📈 2. Ownership Value Estimation
+### 2. Ownership Value Estimation
 
 - Estimate the useful lifespan of an item.
 - Understand the relationship between purchase price and usage duration.
 - Evaluate whether replacing or continuing to use an item is financially reasonable.
 
-### 📊 3. Expense Overview
+### 3. Expense Overview
 
 - Visualize spending patterns.
 - Monitor accumulated purchase costs.
